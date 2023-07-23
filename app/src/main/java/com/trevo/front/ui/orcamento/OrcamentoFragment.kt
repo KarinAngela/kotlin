@@ -1,4 +1,4 @@
-package com.trevo.front.ui.gallery
+package com.trevo.front.ui.orcamento
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.trevo.front.databinding.FragmentGalleryBinding
+import com.trevo.front.databinding.FragmentOrcamentoBinding
 
-class GalleryFragment : Fragment() {
+class OrcamentoFragment: Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentOrcamentoBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this).get(OrcamentoViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentOrcamentoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
