@@ -3,7 +3,9 @@ package com.trevo.front
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.appbar_menu, menu)
@@ -49,12 +53,23 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
+//      HACK: Implementar apropriadamente
         return when (item.itemId) {
             R.id.nav_orcamento -> {
+                val toolbar = findViewById<Toolbar>(R.id.toolbar)
+                val toolbarText = toolbar.findViewById<TextView>(R.id.toolbar_title)
+                toolbarText.text = "Orçamento"
+
                 navController.navigate(R.id.nav_orcamento)
                 return true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> {
+                val toolbar = findViewById<Toolbar>(R.id.toolbar)
+                val toolbarText = toolbar.findViewById<TextView>(R.id.toolbar_title)
+                toolbarText.text = "Produtos"
+
+                super.onOptionsItemSelected(item)
+            }
         }
 
     }
