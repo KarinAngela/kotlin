@@ -10,4 +10,7 @@
     <string name="menu_home">Produtos</string>
 
     <string name="home_appbar_title">Produtos</string>
+
+    <string name="search_label">""</string>
+    <string name="search_hint">Pesquisar…</string>
 </resources>
