@@ -1,23 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.orcamento.OrcamentoFragment">
+<!--    <TextView-->
+<!--        android:id="@+id/text_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+<!--    Ja feito so fazer aparecer na tela (usando o text so pra deixa rodando-->
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardOrca"
+        android:layout_width="369dp"
+        android:layout_height="160dp"
+        android:layout_marginVertical="16dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:shapeAppearanceOverlay="@style/CardOrca"
+        tools:layout_editor_absoluteY="77dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="329dp"
+            android:layout_height="63dp"
+            android:layout_gravity="right"
+            android:gravity="center_horizontal"
+            android:text="Hover 500"
+            android:textColor="@color/black"
+            android:textSize="12pt" />
+
+        <ImageView
+            android:layout_width="142dp"
+            android:layout_height="128dp"
+            android:layout_gravity="left"
+            android:src="@drawable/pulverizado" />
+
+        <ImageButton
+            android:id="@+id/button_delet"
+            android:layout_width="75dp"
+            android:layout_height="162dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="300dp"
+            android:background="#C94B27"
+            android:src="@mipmap/ic_delet"
+            android:contentDescription="DELETAR"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
