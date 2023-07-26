@@ -3,7 +3,9 @@ package com.trevo.front
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,6 +15,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.trevo.front.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,13 +38,18 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home
+                R.id.nav_home,
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
 
+        val button: Button = findViewById(R.id.button)
+        button.setOnClickListener { view ->
+            navController.navigate(R.id.nav_detalhe)
+        }
+
+    }
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -63,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.nav_orcamento)
                 return true
             }
+
             else -> {
                 val toolbar = findViewById<Toolbar>(R.id.toolbar)
                 val toolbarText = toolbar.findViewById<TextView>(R.id.toolbar_title)
@@ -78,4 +87,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }
