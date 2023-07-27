@@ -82,7 +82,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button_detalhe"
+            android:id="@+id/detalhe_button"
             android:layout_width="300sp"
             android:layout_height="80sp"
             android:layout_gravity="center_horizontal|bottom"

@@ -1,9 +1,11 @@
 package com.trevo.front.detalhe
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
@@ -13,6 +15,9 @@ import com.trevo.front.databinding.ActivityDetalheBinding
 
 class DetalheActivity: AppCompatActivity() {
     private lateinit var binding: ActivityDetalheBinding
+    private val detalheViewModel by viewModels<DetalheViewModel> {
+        DetalheViewModelFactory(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +31,14 @@ class DetalheActivity: AppCompatActivity() {
         val product: Produto? = intent.getParcelableExtra("product")
         if (product != null) {
             fillProductInformation(product)
+        }
+
+        val addButton: Button = findViewById(R.id.detalhe_button)
+        addButton.setOnClickListener {
+            if (product != null) {
+                detalheViewModel.addToOrcamento(product)
+                Toast.makeText(this, "\"${product.nome}\" foi adicionado ao orçamento!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

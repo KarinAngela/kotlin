@@ -1,22 +1,22 @@
-package com.trevo.front.orcamento
+package com.trevo.front.detalhe
 
 import android.content.Context
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.trevo.front.data.DataSource
 import com.trevo.front.data.Produto
 
-class OrcamentoViewModel(val dataSource: DataSource): ViewModel() {
-    val productsLiveData = dataSource.getProductList()
+class DetalheViewModel(val dataSource: DataSource) : ViewModel() {
+    fun addToOrcamento(product: Produto) {
+        dataSource.addProduct(product)
+    }
 }
 
-class OrcamentoViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
+class DetalheViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T: ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(OrcamentoViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(DetalheViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return OrcamentoViewModel(
+            return DetalheViewModel(
                 dataSource = DataSource.getDataSource(context.resources)
             ) as T
         }
