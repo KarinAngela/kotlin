@@ -25,7 +25,8 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Orçamento"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
         </androidx.appcompat.widget.Toolbar>
 

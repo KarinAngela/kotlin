@@ -27,6 +27,7 @@ class DetalheActivity: AppCompatActivity() {
         setSupportActionBar(binding.appbarDetalhe)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.title = null
 
         val product: Produto? = intent.getParcelableExtra("product")
         if (product != null) {
