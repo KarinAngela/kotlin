@@ -1,53 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
 
     <com.google.android.material.card.MaterialCardView
         style="@style/CardOrca"
-        android:layout_width="369dp"
-        android:layout_height="160dp"
+        android:layout_width="360dp"
+        android:layout_height="130dp"
         android:layout_marginVertical="16dp"
         app:cardCornerRadius="32dp"
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="false"
-        app:layout_constraintBaseline_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toStartOf="parent"
-        app:shapeAppearanceOverlay="@style/CardOrca"
-        tools:layout_editor_absoluteY="77dp">
+        app:shapeAppearanceOverlay="@style/CardOrca">
 
-        <TextView
-            android:id="@+id/item_orcamento_title"
-            android:layout_width="299dp"
-            android:layout_height="63dp"
-            android:layout_gravity="right"
-            android:gravity="center_horizontal"
-            android:textColor="@color/black"
-            android:textSize="12pt" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rowCount="1"
+            android:columnCount="3">
 
-        <ImageView
-            android:id="@+id/item_orcamento_image_view"
-            android:layout_width="142dp"
-            android:layout_height="128dp"
-            android:layout_gravity="left"
-            android:contentDescription="Imagem do produto"/>
+            <ImageView
+                android:id="@+id/item_orcamento_image_view"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:contentDescription="Imagem do produto"
+                android:scaleType="centerCrop"/>
 
-        <ImageButton
-            android:id="@+id/item_orcamento_image_button"
-            android:layout_width="75dp"
-            android:layout_height="162dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="300dp"
-            android:background="#C94B27"
-            android:src="@mipmap/ic_delet"
-            android:contentDescription="Apagar produto"/>
+            <TextView
+                android:id="@+id/item_orcamento_title"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
+            <ImageButton
+                android:id="@+id/item_orcamento_image_button"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:background="#C94B27"
+                android:contentDescription="Apagar produto"
+                android:src="@mipmap/ic_delet" />
 
+        </GridLayout>
     </com.google.android.material.card.MaterialCardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
