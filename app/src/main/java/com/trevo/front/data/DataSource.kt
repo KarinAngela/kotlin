@@ -21,10 +21,20 @@ class DataSource(resources: Resources) {
     }
 
     fun removeProduct(id: Long): Produto? {
-        productLiveData.value?.let { products ->
-            return products.firstOrNull{ it.id == id }
+        val currentList = productLiveData.value
+
+        if (currentList == null) {
+            return null
+        } else {
+            val product = currentList.firstOrNull { it.id == id }
+            if (product != null) {
+                val updatedList = currentList.toMutableList()
+                updatedList.remove(product)
+                productLiveData.postValue(updatedList)
+            }
+
+            return product
         }
-        return null
     }
 
     fun getProductList(): LiveData<List<Produto>> {

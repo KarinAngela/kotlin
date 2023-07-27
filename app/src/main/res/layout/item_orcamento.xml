@@ -44,7 +44,7 @@
                 android:textSize="24sp" />
 
             <ImageButton
-                android:id="@+id/item_orcamento_image_button"
+                android:id="@+id/item_orcamento_delete_button"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_row="0"
