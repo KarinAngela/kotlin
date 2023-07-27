@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_orcamento"
-        android:name="com.trevo.front.ui.orcamento.OrcamentoFragment"
-        android:label=""
-        tools:layout="@layout/fragment_orcamento" />
-
-    <fragment
         android:id="@+id/nav_detalhe"
         android:name="com.trevo.front.ui.detalhe.DetalheFragment"
         android:label=""

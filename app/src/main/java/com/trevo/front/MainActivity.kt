@@ -1,5 +1,6 @@
 package com.trevo.front
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.trevo.front.databinding.ActivityMainBinding
+import com.trevo.front.orcamento.OrcamentoActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,24 +61,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-
-//      HACK: Implementar apropriadamente
         return when (item.itemId) {
             R.id.nav_orcamento -> {
-                val toolbar = findViewById<Toolbar>(R.id.toolbar)
-                val toolbarText = toolbar.findViewById<TextView>(R.id.toolbar_title)
-                toolbarText.text = "Orçamento"
-
-                navController.navigate(R.id.nav_orcamento)
+                val intent = Intent(this, OrcamentoActivity::class.java)
+                startActivity(intent)
                 return true
             }
 
             else -> {
-                val toolbar = findViewById<Toolbar>(R.id.toolbar)
-                val toolbarText = toolbar.findViewById<TextView>(R.id.toolbar_title)
-                toolbarText.text = "Produtos"
-
                 super.onOptionsItemSelected(item)
             }
         }
