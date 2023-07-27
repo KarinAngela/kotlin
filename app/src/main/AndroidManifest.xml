@@ -27,6 +27,9 @@
         <activity
             android:name=".orcamento.OrcamentoActivity"
             android:theme="@style/Theme.Front.NoActionBar"/>
+        <activity
+            android:name=".detalhe.DetalheActivity"
+            android:theme="@style/Theme.Front.NoActionBar"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

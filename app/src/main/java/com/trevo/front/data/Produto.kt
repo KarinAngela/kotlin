@@ -1,8 +1,11 @@
 package com.trevo.front.data
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 import java.util.Date
 
+@Parcelize
 data class Produto(
     @SerializedName("id")
     val id: Long,
@@ -27,4 +30,4 @@ data class Produto(
 
     @SerializedName("status")
     val status: String
-)
+) : Parcelable
