@@ -25,8 +25,8 @@ class OrcamentoActivity: AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val orcamentoAdapter = OrcamentoAdapter { produto -> }
-        val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
+        val orcamentoAdapter = OrcamentoAdapter()
+        val recyclerView: RecyclerView = findViewById(R.id.orcamento_recycler_view)
         recyclerView.adapter = orcamentoAdapter
 
         orcamentoViewModel.productsLiveData.observe(this) {

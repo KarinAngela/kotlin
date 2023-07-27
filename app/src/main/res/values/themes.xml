@@ -36,8 +36,6 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
     </style>
 
-
-
     <style name="ShapeAppearanceOverlay_card_custom_corners">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopRight">0dp</item>

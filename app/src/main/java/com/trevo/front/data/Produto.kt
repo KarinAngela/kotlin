@@ -1,14 +1,30 @@
 package com.trevo.front.data
 
+import com.google.gson.annotations.SerializedName
 import java.util.Date
 
 data class Produto(
+    @SerializedName("id")
     val id: Long,
+
+    @SerializedName("nome")
     val nome: String,
-    val cultura_utilizada: String,
-    val descricao_produto: String,
-    val area_suportada: String,
-    val image_url: String,
-    val data_cadastro: Date,
+
+    @SerializedName("culturaUtilizada")
+    val culturaUtilizada: String,
+
+    @SerializedName("descricaoProduto")
+    val descricaoProduto: String,
+
+    @SerializedName("areaSuportada")
+    val areaSuportada: String,
+
+    @SerializedName("imageUrl")
+    val imageUrl: String,
+
+    @SerializedName("dataCadastro")
+    val dataCadastro: Date,
+
+    @SerializedName("status")
     val status: String
 )

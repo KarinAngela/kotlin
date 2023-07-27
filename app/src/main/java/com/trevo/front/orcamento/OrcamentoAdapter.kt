@@ -12,34 +12,26 @@ import com.squareup.picasso.Picasso
 import com.trevo.front.R
 import com.trevo.front.data.Produto
 
-class OrcamentoAdapter(private val onClick: (Produto) -> Unit) :
+class OrcamentoAdapter() :
     ListAdapter<Produto, OrcamentoAdapter.OrcamentoViewHolder>(OrcamentoDiffCallback) {
 
-        class OrcamentoViewHolder(itemView: View, val onClick: (Produto) -> Unit) :
+        class OrcamentoViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
                 private val productTextView: TextView = itemView.findViewById(R.id.item_orcamento_title)
                 private val productImageView: ImageView = itemView.findViewById(R.id.item_orcamento_image_view)
                 private var currentProduct: Produto? = null
 
-                init {
-                    itemView.setOnClickListener {
-                        currentProduct?.let {
-                            onClick(it)
-                        }
-                    }
-                }
-
                 fun bind(product: Produto) {
                     currentProduct = product
 
                     productTextView.text = product.nome
-                    Picasso.get().load(product.image_url).into(productImageView)
+                    Picasso.get().load(product.imageUrl).into(productImageView)
                 }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrcamentoViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_orcamento, parent, false)
-            return OrcamentoViewHolder(view, onClick)
+            return OrcamentoViewHolder(view)
         }
 
         override fun onBindViewHolder(holder: OrcamentoViewHolder, position: Int) {
